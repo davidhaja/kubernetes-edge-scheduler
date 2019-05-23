@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app1
+  template:
+    metadata:
+      name: pod1
+      labels:
+        app: app1
+        delay_edge-1: "25"
+    spec:
+      containers:
+      - name: pod1-container
+        image: docker.io/centos/tools:latest
+        resources:
+          limits:
+            memory: "6Gi"
+          requests:
+            memory: "6Gi"
+        command:
+        - /sbin/init
+      schedulerName: custom-scheduler

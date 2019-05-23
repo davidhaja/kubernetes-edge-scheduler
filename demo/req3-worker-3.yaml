@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app3
+  template:
+    metadata:
+      name: pod3
+      labels:
+        delay_kube-worker-3: "1"
+        app: app3
+    spec:
+      containers:
+      - name: pod3-container
+        image: docker.io/centos/tools:latest
+        resources:
+          limits:
+            memory: "6Gi"
+          requests:
+            memory: "6Gi"
+        command:
+        - /sbin/init
+      schedulerName: custom-scheduler

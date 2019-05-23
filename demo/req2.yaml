@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app2
+  template:
+    metadata:
+      name: pod2
+      labels:
+        app: app2
+    spec:
+      containers:
+      - name: pod2-container
+        image: docker.io/centos/tools:latest
+        resources:
+          limits:
+            memory: "6Gi"
+          requests:
+            memory: "6Gi"
+        command:
+        - /sbin/init
+      schedulerName: custom-scheduler
