@@ -1,7 +1,7 @@
 # kubernetes-edge-scheduler
 Kubernetes has become the most popular cluster manager during the past 5 years. It is used primarily for orchestrating data center deployments running web applications. Its powerful features, e.g., self-healing and scaling, have attracted a huge community, which in turn, is inducing a meteoric rise of this open source project. We venture to shape Kubernetes to be suited for edge infrastructure. As mostly delay-sensitive applications are to be deployed in the edge, a topology-aware Kubernetes is needed, extending its widely-used feature set with regard to network latency. Moreover, as the edge infrastructure is highly prone to failures and is considered to be expensive to build and maintain, self-healing features must receive more emphasis than in the baseline Kubernetes. We therefore designed a custom Kubernetes scheduler that makes its decisions with applications' delay constraints and edge reliability in mind. In this demonstration we show the novel features of our Kubernetes extension, and describe the solution that we release as open source.
 
-Video showcase is available at https://www.youtube.com/watch?v=FL2OpHV6ZEs
+Video showcase is available at https://www.youtube.com/watch?v=9joijDvx-tM
 More information at http://bit.ly/2QfVqxq
 
 ## Installation
